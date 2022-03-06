@@ -3,6 +3,9 @@ import styles from "../styles/Home.module.css";
 import DynamicText from "components/DynamicText";
 import { Input, Box } from "@chakra-ui/react";
 import { useCallback, useRef } from "react";
+import { useRequireAuth } from "hooks/auth";
+import CurrentUser from "components/CurrentUser";
+import withAuth from "hocs/withAuth";
 
 const Home = () => {
   const dynamicTextRef = useRef<{ changeValue: (value: string) => void }>();
@@ -19,6 +22,7 @@ const Home = () => {
       </Head>
 
       <main className={styles.main}>
+        <CurrentUser />
         <DynamicText ref={dynamicTextRef} />
         <Input onChange={onChange} />
       </main>
@@ -26,4 +30,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default withAuth(Home);
