@@ -1,9 +1,7 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
 import DynamicText from "components/DynamicText";
 import { Input, Box } from "@chakra-ui/react";
 import { useCallback, useRef } from "react";
-import { useRequireAuth } from "hooks/auth";
 import CurrentUser from "components/CurrentUser";
 import withAuth from "hocs/withAuth";
 
@@ -15,17 +13,16 @@ const Home = () => {
   }, []);
 
   return (
-    <Box className={styles.container}>
+    <Box minH="100vh" p="0 0.5rem" flex={1} display="flex" justifyContent="center" alignItems="center">
       <Head>
         <title>Coding Test</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className={styles.main}>
+      <Box as="main" p="5rem 0" flex={1} display="flex" justifyContent="center" alignItems="center">
         <CurrentUser />
         <DynamicText ref={dynamicTextRef} />
-        <Input onChange={onChange} />
-      </main>
+        <Input onChange={onChange} w={"300px"} />
+      </Box>
     </Box>
   );
 };

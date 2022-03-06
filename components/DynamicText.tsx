@@ -16,7 +16,7 @@ const DynamicText = forwardRef<{ changeValue: (value: string) => void }>((props,
   }));
 
   return (
-    <Heading maxW="100vw" isTruncated>
+    <Heading maxW="50vw" maxH="300px" noOfLines={3}>
       {value}
     </Heading>
   );

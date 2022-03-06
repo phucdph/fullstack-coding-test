@@ -14,9 +14,16 @@ const BlogItem: React.FC<IProps> = (props) => {
     onItemClick && onItemClick(data);
   }, [onItemClick, data]);
   return (
-    <Center onClick={handleItemClick} cursor="pointer" userSelect="none">
+    <Center
+      onClick={handleItemClick}
+      cursor="pointer"
+      userSelect="none"
+      >
       <Box
         bg={useColorModeValue("white", "gray.900")}
+        _hover={{
+          background: "teal.50",
+        }}
         boxShadow={"lg"}
         h="full"
         w="full"
