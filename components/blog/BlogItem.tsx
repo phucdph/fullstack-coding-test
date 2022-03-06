@@ -14,27 +14,34 @@ const BlogItem: React.FC<IProps> = (props) => {
     onItemClick && onItemClick(data);
   }, [onItemClick, data]);
   return (
-    <Center onClick={handleItemClick} cursor="pointer">
+    <Center onClick={handleItemClick} cursor="pointer" userSelect="none">
       <Box
-        maxW={"400px"}
-        w={"full"}
         bg={useColorModeValue("white", "gray.900")}
         boxShadow={"lg"}
         h="full"
+        w="full"
         rounded={"md"}
         p={6}
         overflow={"hidden"}>
-        <Box h={"210px"} bg={"gray.100"} mt={-6} mx={-6} mb={6} pos={"relative"}>
+        <Box h={"200px"} bg={"gray.100"} mt={-6} mx={-6} mb={6} pos={"relative"}>
           <Img src={data?.image} objectFit="cover" width="100%" height="100%" />
         </Box>
         <Stack>
           <Text color={"green.500"} textTransform={"uppercase"} fontWeight={800} fontSize={"sm"} letterSpacing={1.1}>
             Blog
           </Text>
-          <Heading color={useColorModeValue("gray.700", "white")} fontSize={"2xl"} fontFamily={"body"}>
+          <Heading
+            title={data?.title}
+            color={useColorModeValue("gray.700", "white")}
+            fontSize={"lg"}
+            fontFamily={"body"}
+            noOfLines={2}
+            h="46px">
             {data?.title}
           </Heading>
-          <Text color={"gray.500"}>{data?.description}</Text>
+          <Text color={"gray.500"} noOfLines={5} title={data?.description} h={"120px"}>
+            {data?.description}
+          </Text>
         </Stack>
         <Stack mt={6} direction={"row"} spacing={4} align={"center"}>
           <Avatar src={data?.owner?.avatar} />

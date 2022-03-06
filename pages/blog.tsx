@@ -52,7 +52,7 @@ const Blog: React.FC<IProps> = (props) => {
       </Head>
       <BlogModal data={selectedPost} onModalClose={handleCloseModal} />
       <Box width="100vw" minHeight="100vh" bg="gray.100" display="flex" justifyContent="center">
-        <Box w={["100%", "80%", "70%"]} bg="white" boxShadow="lg">
+        <Box w={["100%", "100%", "85%"]} bg="white" boxShadow="lg">
           <Grid templateColumns={{ md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)", sm: "repeat(2, 1fr)" }} gap={6}>
             {posts?.map((post) => (
               <BlogItem key={post?.id} data={post} onItemClick={(data) => setSelelectedPostId(data.id)} />
