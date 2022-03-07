@@ -13,12 +13,26 @@ const Home = () => {
   }, []);
 
   return (
-    <Box minH="100vh" p="0 0.5rem" flex={1} display="flex" justifyContent="center" alignItems="center">
+    <Box
+      minH="100vh"
+      flexDirection="column"
+      p="0 0.5rem"
+      flex={1}
+      display="flex"
+      justifyContent="center"
+      alignItems="center">
       <Head>
         <title>Coding Test</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box as="main" p="5rem 0" flex={1} display="flex" justifyContent="center" alignItems="center">
+      <Box
+        as="main"
+        p="5rem 0"
+        flex={1}
+        flexDirection="column"
+        display="flex"
+        justifyContent="center"
+        alignItems="center">
         <CurrentUser />
         <DynamicText ref={dynamicTextRef} />
         <Input onChange={onChange} w={"300px"} />
